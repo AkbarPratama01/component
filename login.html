@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="wrapper bg-body-tertiary">
+        <div class="container main">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <div class="row m-3">
+                        <div class="col-md-6">
+                            <!--image-->
+                            <img src="assets/images/login_page.svg" class="img-fluid mb-3" alt="">
+                        </div>
+                        <div class="col-md-6">
+                                <div class="mt-1 mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" autocomplete="off">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="password">
+                                </div>
+                                <div class="mb-5">
+                                    <input type="submit" class="btn btn-primary" id="button-login" value="Log In">
+                                </div>
+                                <span>I don't have account? <a href="#" class="text-decoration-none">Sign Up</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html> 

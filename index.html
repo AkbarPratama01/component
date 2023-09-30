@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PersonalBudget</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dompet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Wishlist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pemasukkan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pengeluaran</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Laporan</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <button class="btn btn-sm btn-outline-secondary" type="button">Logout</button>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">Dompet</h5>
+                        <h6 class="card-subtitle mb-3 text-muted">Total 2 dompet</h6>
+                        <div>
+                            <h1 class="fw-bold" id="total-pemasukkan">2</h1>
+                        </div>
+                        <a href="#" class="card-link text-decoration-none">Semua Dompet</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">Pemasukkan</h5>
+                        <h6 class="card-subtitle mb-3 text-muted">Total 2 transaksi</h6>
+                        <div>
+                            <h1 class="fw-bold" id="total-pemasukkan">5.000.000</h1>
+                        </div>
+                        <a href="#" class="card-link text-decoration-none">Semua Pemasukkan</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">Pengeluaran</h5>
+                        <h6 class="card-subtitle mb-3 text-muted">Total 20 transaksi</h6>
+                        <div>
+                            <h1 class="fw-bold" id="total-pemasukkan">2.200.500</h1>
+                        </div>
+                        <a href="#" class="card-link text-decoration-none">Semua Pengeluaran</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-7">
+                <div class="card shadow-lg">
+                    <div class="card-header">
+                        <h4 class="card-title">Analisa Keuangan</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <canvas id="acquisitions"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card shadow-lg">
+                    <div class="card-header">
+                        <h4 class="card-title">Transaksi Terakhir</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td class="px-3">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h6>13 Jul 2023</h6>
+                                                </div>
+                                                <div class="col-md-7 col-6">
+                                                    <h4 class="fs-4">Bayar Kuliah</h4>
+                                                </div>
+                                                <div class="col-md-5 col-6">
+                                                    <h4 class="fs-4 text-end">1.500.000</h4>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <span class="fs-5 text-danger">Pengeluaran</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h6>13 Jul 2023</h6>
+                                                </div>
+                                                <div class="col-md-7 col-6">
+                                                    <h4 class="fs-4">Arisan</h4>
+                                                </div>
+                                                <div class="col-md-5 col-6">
+                                                    <h4 class="fs-4 text-end">4.500.000</h4>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <span class="fs-5 text-success">Pemasukkan</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h6>13 Jul 2023</h6>
+                                                </div>
+                                                <div class="col-md-7 col-6">
+                                                    <h4 class="fs-4">Makan Siang</h4>
+                                                </div>
+                                                <div class="col-md-5 col-6">
+                                                    <h4 class="fs-4 text-end">32.000</h4>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <span class="fs-5 text-danger">Pengeluaran</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h6>13 Jul 2023</h6>
+                                                </div>
+                                                <div class="col-md-7 col-6">
+                                                    <h4 class="fs-4">Bensin Motor</h4>
+                                                </div>
+                                                <div class="col-md-5 col-6">
+                                                    <h4 class="fs-4 text-end">25.000</h4>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <span class="fs-5 text-danger">Pengeluaran</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/chart.js/dist/chart.umd.js"></script>
+    <script>
+        (async function() {
+            const data = [
+                { year: 2010, count: 10 },
+                { year: 2011, count: 20 },
+                { year: 2012, count: 15 },
+                { year: 2013, count: 25 },
+                { year: 2014, count: 22 },
+                { year: 2015, count: 30 },
+                { year: 2016, count: 28 },
+            ];
+
+            new Chart(
+                document.getElementById('acquisitions'),
+                {
+                    type: 'bar',
+                    data: {
+                        labels: data.map(row => row.year),
+                        datasets: [
+                            {
+                                label: 'Acquisitions by year',
+                                data: data.map(row => row.count)
+                            }
+                        ]
+                    }
+                }
+            );
+        })();
+    </script>
+  </body>
+</html>
