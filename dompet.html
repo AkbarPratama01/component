@@ -7,9 +7,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Dashboard</title>
+    <title>Dompet</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -48,39 +49,30 @@
 
     <div class="container mt-5">
         <div class="row mb-5">
-            <div class="col-md-4">
-                <div class="card shadow-lg">
-                    <div class="card-body">
-                        <h5 class="card-title">Dompet</h5>
-                        <h6 class="card-subtitle mb-3 text-muted">Total 2 dompet</h6>
-                        <div>
-                            <h1 class="fw-bold" id="total-pemasukkan">2</h1>
-                        </div>
-                        <a href="#" class="card-link text-decoration-none">Semua Dompet</a>
+            <div class="col-md-12">
+                <div class="d-flex">
+                    <div class="mb-2 me-3">
+                        <select class="form-select" name="list_wallet" id="list_wallet" aria-label="Default select example">
+                            <option value="">Pilih Dompet</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-plus-circle"></i> Tambah Dompet
+                        </button>
                     </div>
                 </div>
+                
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card shadow-lg">
                     <div class="card-body">
-                        <h5 class="card-title">Pemasukkan</h5>
-                        <h6 class="card-subtitle mb-3 text-muted">Total 2 transaksi</h6>
-                        <div>
-                            <h1 class="fw-bold" id="total-pemasukkan">5.000.000</h1>
+                        <h5 class="card-title">Seluruh Dompet</h5>
+                        <h6 class="card-subtitle mb-3 text-muted"></h6>
+                        <div class="mb-2">
+                            <h1 class="fw-bold" id="total-pemasukkan">3.200.000</h1>
                         </div>
-                        <a href="#" class="card-link text-decoration-none">Semua Pemasukkan</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow-lg">
-                    <div class="card-body">
-                        <h5 class="card-title">Pengeluaran</h5>
-                        <h6 class="card-subtitle mb-3 text-muted">Total 20 transaksi</h6>
-                        <div>
-                            <h1 class="fw-bold" id="total-pemasukkan">2.200.500</h1>
-                        </div>
-                        <a href="#" class="card-link text-decoration-none">Semua Pengeluaran</a>
+                        <h6 class="card-subtitle text-muted">28 Transaksi</h6>
                     </div>
                 </div>
             </div>
@@ -90,7 +82,7 @@
             <div class="col-md-7">
                 <div class="card shadow-lg">
                     <div class="card-header">
-                        <h4 class="card-title">Analisa Keuangan</h4>
+                        <h4 class="card-title">Analisa</h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -104,7 +96,7 @@
             <div class="col-md-5">
                 <div class="card shadow-lg">
                     <div class="card-header">
-                        <h4 class="card-title">Transaksi Terakhir</h4>
+                        <h4 class="card-title">Transaksi Terbesar</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -191,6 +183,31 @@
         </div>
     </div>
 
+    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Dompet</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nama Dompet</label>
+                        <input type="text" class="form-control" name="name_wallet" id="name-wallet" placeholder="Masukkan Nama Wallet" required="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nominal</label>
+                        <input type="text" class="form-control" name="value_wallet" id="value-wallet" placeholder="Masukkan Nominal Wallet" required="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -198,29 +215,29 @@
     <script src="node_modules/chart.js/dist/chart.umd.js"></script>
     <script>
         (async function() {
-            const data = [
-                { year: 2010, count: 10 },
-                { year: 2011, count: 20 },
-                { year: 2012, count: 15 },
-                { year: 2013, count: 25 },
-                { year: 2014, count: 22 },
-                { year: 2015, count: 30 },
-                { year: 2016, count: 28 },
-            ];
+            const data = {
+                labels: [
+                    'Red',
+                    'Blue',
+                    'Yellow'
+                ],
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ],
+                    hoverOffset: 4
+                }]
+            };
 
             new Chart(
                 document.getElementById('acquisitions'),
                 {
-                    type: 'bar',
-                    data: {
-                        labels: data.map(row => row.year),
-                        datasets: [
-                            {
-                                label: 'Acquisitions by year',
-                                data: data.map(row => row.count)
-                            }
-                        ]
-                    }
+                    type: 'pie',
+                    data: data,
                 }
             );
         })();
